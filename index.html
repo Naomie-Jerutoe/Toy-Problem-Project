@@ -4,13 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Toy Problem Project</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
+    <h1>Toy Problem Project</h1>
+    <div class="main-container">
+        <div class="container">
+            <div class="input-field">
+                <p>Click the following button to see the Student Grade Generator in action</p>
+                <div class="button">
+                    <input class="btn" type="button" onclick="studentGradeGenerator()" value="Generate Grade">
+                </div>
+            </div>
+            <div class="input-field">
+                <p>Click the following button to see the Speed Detector in action</p>
+                <div class="button">
+                    <input class="btn" type="button" onclick="speedDetector()" value="Detect Speed">
+                </div>
+            </div>
+            <div class="input-field">
+                <p>Click the following button to see the Net Salary Calculator in action</p>
+                <div class="button">
+                    <input class="btn" type="button" onclick="speedDetector()" value="Calculate Salary">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="gradeGenerator.js"></script>
     <script src="speedDetector.js"></script>
     <script src="salaryCalculator.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

@@ -23,4 +23,4 @@ function studentGradeGenerator(){
     }   
 }
 //invoke the function
-studentGradeGenerator();
+// studentGradeGenerator();

@@ -9,7 +9,7 @@ Naomi Cheruto Lagat
 
 ## Description
 
-The project consists of three different challenges, that are set to function  
+The project consists of three different challenges, that contains different sets of functions that takes in user inputs and generate desired outputs.  
 
 ## Features
 
@@ -19,15 +19,9 @@ The project consists of three different challenges, that are set to function
 
 ## Behaviour Driven Development
 
-1.Student Grade Generator Challenge
-
-- Declares a function that will generate the student grade
-- The function prompts a student to input their marks and the marks should be between 0 and 100.
-- There is a set of conditions that checks the marks.
-- The corresponding grade of the student's marks is shown using the alert.
-  
-2.Speed Detector Challenge
-3.Net Salary Calculator
+- User clicks either of the three buttons; Generate Grade, Detect Speed or Calculate Salary.
+- User is prompted to input details based on the instructions given i.e input marks or input speed or input basic salary.
+- Upon submitting the correct details, user receives an output corresponding to the input details.
 
 ## Set up
 
