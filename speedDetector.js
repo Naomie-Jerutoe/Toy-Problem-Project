@@ -5,7 +5,7 @@ const exceedingSpeed = 5;
 // Declare a function that will detect speed.
 function speedDetector(){
     // Prompt the user to input the speed of the car.
-    let speed = prompt('Input the speed', '');
+    const speed = prompt('Input the speed', '');
 
     // Condition that checks the speed and prints OK if speed is less than 70.
     if (speed <= speedLimit){
