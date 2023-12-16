@@ -1,9 +1,9 @@
-//Declare a function that will calculate the net salary of the user.
+//declare a function that will calculate the net salary of the user
 function netSalaryCalculator() {
-    //prompt the user to input the basic salary and the benefits.
+    //prompt the user to input the basic salary and the benefits
     const basicSalary = prompt ('Input your basic salary',);
     const benefits = prompt ('Input your benefits',);
-    // convert the two inputs to integer and add them together.
+    // convert the two inputs to integer and add them together
     const grossSalary = parseInt(basicSalary) + parseInt(benefits);
     // calculate the net salary
     const netSalary = grossSalary - (calculatePayee(grossSalary) + calculateNhifDeduction(grossSalary) + calculateNssfDeductions(grossSalary));
@@ -36,7 +36,7 @@ function calculatePayee(grossSalary){
         return payee;
 }
 
-//declare a functio that calculates the payee rate per month, and it takes two parameters.
+//declare a function that calculates the payee rate, and it takes two parameters.
 function payeeRate(grossSalary, rate){
     return Math.floor(grossSalary * rate);
 }
@@ -44,7 +44,7 @@ function payeeRate(grossSalary, rate){
 //declare a function that calculates the NHIF deductions and it takes one parameter.
 function calculateNhifDeduction(grossSalary){
     let nhif = 0;
-// use conditional switch statement that gives the amount to be deducted if the condition is true. 
+// use conditional switch statement that assigns the NHIF amount to be deducted if the condition is true. 
     switch(true){
         case grossSalary >= 0 && grossSalary <= 5999:
             nhif = 150;
