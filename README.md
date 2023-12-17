@@ -2,7 +2,7 @@
 
 This is a JavaScript project.
 
-Github Repo: <a target="_blank" href="https://github.com/Naomie-Jerutoe/Toy-Problem-Project">Link</a>
+Github Repo: [Link](https://github.com/Naomie-Jerutoe/Toy-Problem-Project)
 
 ## Author
 
@@ -24,13 +24,16 @@ The project consists of three different challenges, that contains different sets
 - User is prompted to input details based on the instructions given i.e input marks or input speed or input basic salary.
 - Upon submitting the correct details, user receives an output corresponding to the input details.
 
-## Set up
+## Set up & Instructions
 
 Run:
+
 git clone git@github.com:Naomie-Jerutoe/Toy-Problem-Project.git
 
+This will set up the project in your local repository.
+
 ## License
- 
+
 The MIT License (MIT)
 
 Copyright (c) 2023 Naomi Lagat
