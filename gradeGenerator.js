@@ -1,26 +1,28 @@
 // Declare a function 
 function studentGradeGenerator(){
     //prompt the user to input marks
-    let marks = prompt('Input marks between 0 and 100', '');
+    let marks = prompt('Input your marks between 0 and 100',);
     
     //set the conditions for the marks and alert the corresponding grades
+    let grade;
     if (marks>=79 && marks<=100){
-        alert('A');
+        grade ='A';
     }
     else if(marks>=60 && marks<79){
-        alert ('B');
+        grade = 'B';
     }
     else if(marks>=49 && marks<=59){
-        alert ('C');
+        grade = 'C';
     }
     else if(marks>=40 && marks<49){
-        alert ('D');
+        grade ='D';
     }
-    else if(marks>=0 && marks<40){
-        alert ('E');
+    else if(marks>0 && marks<40){
+        grade = 'E';
     }else{
         alert ('Input the correct marks');
-    }   
+    }  
+    return alert (`Your grade is: ${grade}`);
 }
 //invoke the function
 // studentGradeGenerator();
