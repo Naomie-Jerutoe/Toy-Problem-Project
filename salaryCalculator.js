@@ -5,39 +5,48 @@ function netSalaryCalculator() {
     const benefits = prompt ('Input your benefits',);
     // convert the two inputs to integer and add them together
     const grossSalary = parseInt(basicSalary) + parseInt(benefits);
+    const payeDeduction = calculatePaye(grossSalary);
+    const nhifDeductions =calculateNhifDeduction(grossSalary);
+    const nssfDeductions = calculateNssfDeductions(grossSalary);
     // calculate the net salary
-    const netSalary = grossSalary - (calculatePayee(grossSalary) + calculateNhifDeduction(grossSalary) + calculateNssfDeductions(grossSalary));
-        alert (`Your Net Salary is: ${netSalary}`);
+    const netSalary = grossSalary - (payeDeduction + nhifDeductions + nssfDeductions);
+    //display the result to the user
+    alert(`Payslip:\n 
+    Gross Salary:\t Ksh. ${grossSalary}\n
+    PAYE:\t Ksh. ${payeDeduction}\n
+    NHIF Deduction:\t Ksh. ${nhifDeductions}\n 
+    NSSF Deductions :\t Ksh. ${nssfDeductions}\n
+    Net Salary is:\t Ksh. ${netSalary}`);
 }
 
-//declare a function to calculate the payee based on different salary bracket
-function calculatePayee(grossSalary){
-    let payee = 0;
-// use a switch statement to check the conditions and use the payeeRate() to calculate Payee amount.
+//declare a function to calculate the PAYE based on different salary bracket
+function calculatePaye(grossSalary){
+    let paye = 0;
+// use a switch statement to check the conditions and use the payeRate() to calculate PAYE amount.
     switch(true){
         case grossSalary >= 0 && grossSalary <= 24000:
-            payee = payeeRate(grossSalary, 0.1);
+            paye = payeRate(grossSalary, 0.1);
             break;
         case grossSalary >= 24001 && grossSalary <= 32333:
-            payee = payeeRate(grossSalary, 0.25);
+            paye = payeRate(grossSalary, 0.25);
             break;
         case grossSalary >= 32334 && grossSalary <= 500000:
-            payee = payeeRate(grossSalary, 0.3);
+            paye = payeRate(grossSalary, 0.3);
             break;
         case grossSalary >= 500001 && grossSalary <= 800000:
-            payee = payeeRate(grossSalary, 0.25);
+            paye = payeRate(grossSalary, 0.25);
             break;
         case grossSalary > 8000001:
-            payee = payeeRate(grossSalary, 0.25);
+            paye = payeRate(grossSalary, 0.25);
             break;
         default:
             alert ('Invalid input');
     }
-        return payee;
+        return paye;
 }
 
-//declare a function that calculates the payee rate, and it takes two parameters.
-function payeeRate(grossSalary, rate){
+//declare a function that calculates the paye rate, and it takes two parameters.
+function payeRate(grossSalary, rate){
     return Math.floor(grossSalary * rate);
 }
 
@@ -105,5 +114,5 @@ function calculateNhifDeduction(grossSalary){
 
 //declare a function that calculates the NSSF deduction and it takes one parameter.
 function calculateNssfDeductions(grossSalary){
-    return grossSalary * 0.06;
+    return Math.floor(grossSalary * 0.06);
 }
