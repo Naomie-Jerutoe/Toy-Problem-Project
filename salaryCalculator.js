@@ -7,7 +7,7 @@ function netSalaryCalculator() {
     const grossSalary = parseInt(basicSalary) + parseInt(benefits);
     const payeDeduction = calculatePaye(grossSalary);
     const nhifDeductions =calculateNhifDeduction(grossSalary);
-    const nssfDeductions = calculateNssfDeductions(grossSalary);
+    const nssfDeductions = calculateNssfDeductions(basicSalary);
     // calculate the net salary
     const netSalary = grossSalary - (payeDeduction + nhifDeductions + nssfDeductions);
     //display the result to the user
@@ -113,6 +113,6 @@ function calculateNhifDeduction(grossSalary){
 }
 
 //declare a function that calculates the NSSF deduction and it takes one parameter.
-function calculateNssfDeductions(grossSalary){
-    return Math.floor(grossSalary * 0.06);
+function calculateNssfDeductions(basicSalary){
+    return Math.floor(basicSalary * 0.06);
 }
