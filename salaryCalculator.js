@@ -5,9 +5,10 @@ function netSalaryCalculator() {
     const benefits = prompt ('Input your benefits',);
     // convert the two inputs to integer and add them together
     const grossSalary = parseInt(basicSalary) + parseInt(benefits);
-    const payeDeduction = calculatePaye(grossSalary);
     const nhifDeductions =calculateNhifDeduction(grossSalary);
     const nssfDeductions = calculateNssfDeductions(basicSalary);
+    const taxableIncome = grossSalary - (nhifDeductions + nssfDeductions);
+    const payeDeduction = calculatePaye(taxableIncome);
     // calculate the net salary
     const netSalary = grossSalary - (payeDeduction + nhifDeductions + nssfDeductions);
     //display the result to the user
@@ -20,24 +21,24 @@ function netSalaryCalculator() {
 }
 
 //declare a function to calculate the PAYE based on different salary bracket
-function calculatePaye(grossSalary){
+function calculatePaye(taxableIncome){
     let paye = 0;
 // use a switch statement to check the conditions and use the payeRate() to calculate PAYE amount.
     switch(true){
-        case grossSalary >= 0 && grossSalary <= 24000:
-            paye = payeRate(grossSalary, 0.1);
+        case taxableIncome >= 0 && taxableIncome <= 24000:
+            paye = payeRate(taxableIncome, 0.1);
             break;
-        case grossSalary >= 24001 && grossSalary <= 32333:
-            paye = payeRate(grossSalary, 0.25);
+        case taxableIncome >= 24001 && taxableIncome <= 32333:
+            paye = payeRate(taxableIncome, 0.25);
             break;
-        case grossSalary >= 32334 && grossSalary <= 500000:
-            paye = payeRate(grossSalary, 0.3);
+        case taxableIncome >= 32334 && taxableIncome <= 500000:
+            paye = payeRate(taxableIncome, 0.3);
             break;
-        case grossSalary >= 500001 && grossSalary <= 800000:
-            paye = payeRate(grossSalary, 0.325);
+        case taxableIncome >= 500001 && taxableIncome <= 800000:
+            paye = payeRate(taxableIncome, 0.325);
             break;
-        case grossSalary > 8000001:
-            paye = payeRate(grossSalary, 0.35);
+        case taxableIncome > 8000001:
+            paye = payeRate(taxableIncome, 0.35);
             break;
         default:
             alert ('Invalid input');
@@ -46,8 +47,8 @@ function calculatePaye(grossSalary){
 }
 
 //declare a function that calculates the paye rate, and it takes two parameters.
-function payeRate(grossSalary, rate){
-    return Math.floor(grossSalary * rate);
+function payeRate(taxableIncome, rate){
+    return Math.floor(taxableIncome * rate);
 }
 
 //declare a function that calculates the NHIF deductions and it takes one parameter.
