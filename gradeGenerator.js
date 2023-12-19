@@ -5,10 +5,10 @@ function studentGradeGenerator(){
     
     //set the conditions for the marks and alert the corresponding grades
     let grade;
-    if (marks>=79 && marks<=100){
+    if (marks>79 && marks<=100){
         grade ='A';
     }
-    else if(marks>=60 && marks<79){
+    else if(marks>=60 && marks<=79){
         grade = 'B';
     }
     else if(marks>=49 && marks<=59){
