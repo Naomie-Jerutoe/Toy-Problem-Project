@@ -34,10 +34,10 @@ function calculatePaye(grossSalary){
             paye = payeRate(grossSalary, 0.3);
             break;
         case grossSalary >= 500001 && grossSalary <= 800000:
-            paye = payeRate(grossSalary, 0.25);
+            paye = payeRate(grossSalary, 0.325);
             break;
         case grossSalary > 8000001:
-            paye = payeRate(grossSalary, 0.25);
+            paye = payeRate(grossSalary, 0.35);
             break;
         default:
             alert ('Invalid input');
